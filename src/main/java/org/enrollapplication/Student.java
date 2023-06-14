@@ -24,13 +24,17 @@ public class Student {
             joinColumns = @JoinColumn(name = "student_id"),
             inverseJoinColumns = @JoinColumn(name = "course_id")
     )
-        private List<Course> courses = new ArrayList<>();
+    private List<Course> courses = new ArrayList<>();
+    // @ManyToMany annotation indicates a student can be associated with multiple courses
+    // and course can be associated with multiple students
+    // @JoinTable specifies details of the join table that will be used to store the relationship
+
 
     // Constructors
-    public Student(){
+    public Student() {
     }
 
-    public Student(String name, String email){
+    public Student(String name, String email) {
         // Parameterized constructor to create a Student object with name and email
         this.name = name;
         this.email = email;
@@ -38,4 +42,32 @@ public class Student {
 
     // Getters and Setters
 
+    public long getId() {
+        // retrieve id of student
+        return id;
+    }
+
+    public String getName(){
+        // retrieve name of student
+        return name;
+    }
+
+    public void setName(String name){
+        // set name of the student
+        this.name = name;
+    }
+
+    public String getEmail(){
+        // retrieve email of student
+        return email;
+    }
+
+    public void setEmail(String email){
+        this.email =email;
+    }
+
+    public void setCourses(List<Course> courses){
+        // set courses associated with student
+        this.courses = courses;
+    }
 }
