@@ -5,11 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dcc6ce01-5f8b-42a5-b629-d2a7e0757f21" name="Changes" comment="Initialize and Setup of dependencies and student and course classes">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/enrollapplication/Enrollment.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/enrollapplication/Course.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/enrollapplication/Course.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/enrollapplication/CourseRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/enrollapplication/CourseRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/enrollapplication/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/enrollapplication/Student.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/enrollapplication/StudentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/enrollapplication/StudentRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/enrollapplication/StudentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/enrollapplication/StudentService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

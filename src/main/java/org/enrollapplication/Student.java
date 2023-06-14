@@ -3,7 +3,9 @@ package org.enrollapplication;
 import jakarta.persistence.*;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 public class Student {
@@ -18,16 +20,8 @@ public class Student {
     private String email;
     // Fields represent attributes of a student
 
-    @ManyToMany
-    @JoinTable(
-            name = "student_course",
-            joinColumns = @JoinColumn(name = "student_id"),
-            inverseJoinColumns = @JoinColumn(name = "course_id")
-    )
-    private List<Course> courses = new ArrayList<>();
-    // @ManyToMany annotation indicates a student can be associated with multiple courses
-    // and course can be associated with multiple students
-    // @JoinTable specifies details of the join table that will be used to store the relationship
+    @OneToMany(mappedBy = "student")
+    private Set<Enrollment> enrollments = new HashSet<>();
 
 
     // Constructors
@@ -63,11 +57,15 @@ public class Student {
     }
 
     public void setEmail(String email){
-        this.email =email;
+        this.email = email;
     }
 
-    public void setCourses(List<Course> courses){
+    public Set<Enrollment> getEnrollments() {
+        return enrollments;
+    }
+
+    public void setEnrollments(Set<Enrollment> enrollments){
         // set courses associated with student
-        this.courses = courses;
+        this.enrollments = enrollments;
     }
 }
