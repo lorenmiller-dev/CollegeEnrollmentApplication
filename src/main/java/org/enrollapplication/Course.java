@@ -1,56 +1,66 @@
 package org.enrollapplication;
 
 import jakarta.persistence.*;
-
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 public class Course {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-    private long id;
     private String name;
     private String description;
 
-    @ManyToMany
-    private List<Student> students = new ArrayList<>();
+    @OneToMany(mappedBy = "course")
+    private Set<Enrollment> enrollments = new HashSet<>();
 
     // Constructors
-    public Course(){}
 
-    public Course(String name, String description){
+    public Course() {
+    }
+
+    public Course(String name, String description) {
         this.name = name;
         this.description = description;
     }
 
     // Getters and Setters
-    public Long getId(){
+
+    public Long getId() {
         return id;
     }
 
-    public String getName(){
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getName() {
         return name;
     }
 
-    public void setName(String name){
+    public void setName(String name) {
         this.name = name;
     }
 
-    public String getDescription(){
+    public String getDescription() {
         return description;
     }
 
-    public void setDescription(String description){
+    public void setDescription(String description) {
         this.description = description;
     }
 
-    public List<Student> getStudents(){
-        return students;
+    public Set<Enrollment> getEnrollments() {
+        return enrollments;
     }
 
-    public void setStudents(List<Student> students) {
-        this.students = students;
+    public void setEnrollments(Set<Enrollment> enrollments) {
+        this.enrollments = enrollments;
     }
 }
+
+
+
+
