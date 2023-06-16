@@ -15,23 +15,44 @@ import java.util.regex.Pattern;
 public class StudentService {
     private final StudentRepository studentRepository;
 
+    /**
+     * Constructor for StudentService Class
+     *
+     * @param studentRepository The StudentRepository instance to be injected
+     */
     @Autowired
     public StudentService(StudentRepository studentRepository){
         this.studentRepository = studentRepository;
     }
 
-    // Get all students
+    /**
+     * Get all students
+     *
+     * @return List of all students
+     */
     public List<Student> getAllStudents(){
         return studentRepository.findAll();
     }
 
-    // Get student by Id
+    /**
+     * Get Student by Id
+     *
+     * @param id The Id of the student to retrieve
+     * @return Student with specified Id
+     * @throws ResponseStatusException If student with given Id is not found
+     */
     public Student getStudentById(Long id) {
         return studentRepository.findById(id)
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Student not found with id: " + id));
     }
 
-    // Create new student
+    /**
+     * Create a Student
+     *
+     * @param student The student object to create
+     * @return The created student
+     * @throws ResponseStatusException if student's email is either empty, invalid, or already existing or if name is empty.
+     */
     public Student createStudent(Student student){
         // Perform additional validation or business logic here
 
@@ -56,7 +77,12 @@ public class StudentService {
         return studentRepository.save(student);
     }
 
-    // Helper method to validate email formate
+    /**
+     * Helper class to validate email
+     *
+     * @param email The email to validate
+     * @return True if email is in valid format, false otherwise
+     */
     private boolean isValidEmail(String email){
         // Regular expression pattern for email validation
         String emailRegex = "^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$";
