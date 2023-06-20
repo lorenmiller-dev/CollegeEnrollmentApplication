@@ -1,6 +1,7 @@
 package org.enrollapplication;
 
 import jakarta.persistence.*;
+
 import java.util.HashSet;
 import java.util.Set;
 
@@ -15,6 +16,9 @@ public class Course {
 
     @OneToMany(mappedBy = "course")
     private Set<Enrollment> enrollments = new HashSet<>();
+
+    @ManyToMany(mappedBy = "courses")
+    private Set<Student> students = new HashSet<>();
 
     // Constructors
 
@@ -59,7 +63,16 @@ public class Course {
     public void setEnrollments(Set<Enrollment> enrollments) {
         this.enrollments = enrollments;
     }
+
+    public Set<Student> getStudents() {
+        return students;
+    }
+
+    public void setStudents(Set<Student> students) {
+        this.students = students;
+    }
 }
+
 
 
 

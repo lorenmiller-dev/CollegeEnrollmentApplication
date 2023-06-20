@@ -21,15 +21,22 @@ public class Student {
     @OneToMany(mappedBy = "student")
     private Set<Enrollment> enrollments = new HashSet<>();
 
+    @ManyToMany
+    @JoinTable(
+            name = "enrollment",
+            joinColumns = @JoinColumn(name = "student_id"),
+            inverseJoinColumns = @JoinColumn(name = "course_id")
+    )
+    private Set<Course> courses = new HashSet<>();
 
     // Constructors
-    public Student() {
-    }
-
-    public Student(String name, String email) {
-        // Parameterized constructor to create a Student object with name and email
+    public Student(Long id, String name, String email) {
+        this.id = id;
         this.name = name;
         this.email = email;
+    }
+
+    public Student() {
     }
 
     // Getters and Setters

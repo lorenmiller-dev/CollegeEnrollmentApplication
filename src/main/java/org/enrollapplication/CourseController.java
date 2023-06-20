@@ -36,7 +36,7 @@ public class CourseController {
     }
 
     /**
-     * 
+     *
      * @param course
      * @return
      */
@@ -46,5 +46,28 @@ public class CourseController {
 
         // Return created course in response body with HTTP status 201 (Created)
         return ResponseEntity.status(HttpStatus.CREATED).body(createdCourse);
+    }
+
+    /**
+     *
+     * @param id
+     * @param course
+     * @return
+     */
+    @PutMapping("/{id}")
+    public Course updateCourse(@PathVariable Long id, @RequestBody Course course){
+        return courseService.updateCourse(id, course);
+    }
+
+    /**
+     * Delete a course
+     * @param id ID of the course to delete
+     * @return ResponseEntity with no content
+     */
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteCourse(@PathVariable Long id) {
+        courseService.deleteCourse(id);
+        // Return an empty response body with HTTP status 204 (No Content)
+        return ResponseEntity.noContent().build();
     }
 }

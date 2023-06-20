@@ -21,5 +21,5 @@ public interface CourseRepository extends JpaRepository<Course, Long> {
     List<Course> findByName(String name);
 
     // find courses in which specific student is enrolled
-    Optional<Course> findByStudent(List<Student> students);
+    List<Course> findByStudentsIn(List<Student> students);
 }

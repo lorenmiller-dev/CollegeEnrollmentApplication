@@ -9,12 +9,14 @@ public class Enrollment {
     private Long id;
 
     @ManyToOne
+    @JoinColumn(name = "student_id")
     private Student student;
 
     @ManyToOne
+    @JoinColumn(name = "course_id")
     private Course course;
 
-    // Constructors
+    // Constructors, getters, setters, and other methods
 
     public Enrollment() {
     }
@@ -24,7 +26,7 @@ public class Enrollment {
         this.course = course;
     }
 
-    // Getters and Setters
+    // Getters and setters
 
     public Long getId() {
         return id;
