@@ -37,7 +37,8 @@ public class CourseService {
      */
     public Course getCourseById(Long id){
         return courseRepository.findById(id)
-                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Course not found with id: " + id));
+                .orElseThrow(() ->
+                        new ResponseStatusException(HttpStatus.NOT_FOUND, "Course not found with id: " + id));
     }
 
 
@@ -76,7 +77,8 @@ public class CourseService {
      */
     public Course updateCourse(Long id, Course updatedCourse){
         Course course = courseRepository.findById(id)
-                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Course not found with id: " + id));
+                .orElseThrow(() ->
+                        new ResponseStatusException(HttpStatus.NOT_FOUND, "Course not found with id: " + id));
 
         // Update the course properties
         course.setName(updatedCourse.getName());
@@ -94,7 +96,8 @@ public class CourseService {
      */
     public void deleteCourse(Long id){
         Course course =  courseRepository.findById(id)
-                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Course not found with id: " + id));
+                .orElseThrow(() ->
+                        new ResponseStatusException(HttpStatus.NOT_FOUND, "Course not found with id: " + id));
 
         // Check if there are any enrollments associated with the course
         if (!course.getEnrollments().isEmpty()) {

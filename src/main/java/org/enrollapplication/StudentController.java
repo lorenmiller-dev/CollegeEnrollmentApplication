@@ -56,6 +56,19 @@ public class StudentController {
     }
 
     /**
+     *  Update a Student given specified Id
+     *
+     * @param id The Id of a student
+     * @param updatedStudent the updated student
+     * @return Response entity with the updated student in the response body with HTTP 200 (OK)
+     */
+    @PutMapping("/{id}")
+    public ResponseEntity<Student> updateStudent(@PathVariable long id, @RequestBody Student updatedStudent){
+        Student savedStudent = studentService.updateStudent(id, updatedStudent);
+        return ResponseEntity.ok(savedStudent);
+    }
+
+    /**
      * Delete student
      *
      * @param id Id of student to delete

@@ -96,4 +96,24 @@ public class StudentService {
         // Return true if the email matches the pattern, otherwise false
         return matcher.matches();
     }
+
+    /**
+     * Update a student for specified Id
+     *
+     * @param id
+     * @param updatedStudent
+     * @return
+     */
+    public Student updateStudent(Long id, Student updatedStudent){
+        Student student = studentRepository.findById(id)
+                .orElseThrow(() ->
+                        new ResponseStatusException(HttpStatus.NOT_FOUND, "Student not found with id: " + id));
+
+        // Update student properties
+        student.setName(updatedStudent.getName());
+        student.setEmail(updatedStudent.getEmail());
+
+        // save updated student
+        return studentRepository.save(student);
+    }
 }
