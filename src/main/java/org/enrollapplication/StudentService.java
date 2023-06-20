@@ -113,6 +113,12 @@ public class StudentService {
         student.setName(updatedStudent.getName());
         student.setEmail(updatedStudent.getEmail());
 
+        // Check if student with the same email already exits
+        if (studentRepository.findByEmail(student.getEmail()).isPresent()){
+            throw new ResponseStatusException(HttpStatus.CONFLICT, "A student with the same email already exists");
+
+        }
+
         // save updated student
         return studentRepository.save(student);
     }

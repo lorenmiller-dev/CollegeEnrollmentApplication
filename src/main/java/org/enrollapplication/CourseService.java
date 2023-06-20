@@ -84,6 +84,11 @@ public class CourseService {
         course.setName(updatedCourse.getName());
         course.setDescription(updatedCourse.getDescription());
 
+        // Check if course name is empty
+        if (course.getName().isEmpty()){
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Course name cannot be empty");
+        }
+
         // Save the updated course
         return courseRepository.save(course);
     }
