@@ -1,5 +1,6 @@
 package org.enrollapplication;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.util.HashSet;
@@ -18,6 +19,7 @@ public class Student {
     private String email;
     // Fields represent attributes of a student
 
+    @JsonIgnore
     @OneToMany(mappedBy = "student")
     private Set<Enrollment> enrollments = new HashSet<>();
 

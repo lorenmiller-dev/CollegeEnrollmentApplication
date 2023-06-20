@@ -1,5 +1,6 @@
 package org.enrollapplication;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.util.HashSet;
@@ -14,6 +15,7 @@ public class Course {
     private String name;
     private String description;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "course")
     private Set<Enrollment> enrollments = new HashSet<>();
 

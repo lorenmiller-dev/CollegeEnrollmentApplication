@@ -5,17 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dcc6ce01-5f8b-42a5-b629-d2a7e0757f21" name="Changes" comment="Initialize and Setup of dependencies and student and course classes">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/enrollapplication/EnrollApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/enrollapplication/StudentServiceTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/enrollapplication/Course.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/enrollapplication/Course.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/enrollapplication/CourseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/enrollapplication/CourseController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/enrollapplication/CourseRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/enrollapplication/CourseRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/enrollapplication/Enrollment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/enrollapplication/Enrollment.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/enrollapplication/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/enrollapplication/Student.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,7 +48,7 @@
       <recent name="org.enrollapplication" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.StudentServiceTest.testGetAllStudents">
+  <component name="RunManager" selected="Application.EnrollApplication">
     <configuration name="EnrollApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <envs>
         <env name="DB_USERNAME" value="root" />
@@ -162,8 +154,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.StudentServiceTest.testGetAllStudents" />
         <item itemvalue="Application.EnrollApplication" />
+        <item itemvalue="JUnit.StudentServiceTest.testGetAllStudents" />
         <item itemvalue="Application.StudentServiceTest" />
         <item itemvalue="Application.EnrollmentApplication" />
         <item itemvalue="Application.Main" />
