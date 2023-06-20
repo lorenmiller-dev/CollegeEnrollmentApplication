@@ -20,15 +20,16 @@ public class CourseController {
      *
      * @return list of all courses
      */
-    @GetMapping("/all")
+    @GetMapping
     public List<Course> getAllCourses(){
         return courseService.getAllCourses();
     }
 
     /**
+     * Get a course by Id
      *
-     * @param id
-     * @return
+     * @param id The id of the course object
+     * @return The course
      */
     @GetMapping("/{id}")
     public Course getCourseById(@PathVariable Long id){
@@ -49,6 +50,7 @@ public class CourseController {
     }
 
     /**
+     * Update a course given a specified Id
      *
      * @param id
      * @param course

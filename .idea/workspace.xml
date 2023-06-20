@@ -9,6 +9,7 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/org/enrollapplication/CourseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/enrollapplication/CourseController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/enrollapplication/CourseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/enrollapplication/CourseService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/enrollapplication/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/enrollapplication/Student.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/enrollapplication/StudentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/enrollapplication/StudentService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

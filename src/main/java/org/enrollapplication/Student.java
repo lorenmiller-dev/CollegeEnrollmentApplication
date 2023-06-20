@@ -17,6 +17,9 @@ public class Student {
 
     private String name;
     private String email;
+    private int age;
+    private String address;
+    private String gender;
     // Fields represent attributes of a student
 
     @JsonIgnore
@@ -60,6 +63,36 @@ public class Student {
 
     public void setEmail(String email){
         this.email = email;
+    }
+
+    public int getAge() {
+        // get age of student
+        return age;
+    }
+
+    public void setAge(int age) {
+        // set age of student
+        this.age = age;
+    }
+
+    public String getAddress(){
+        // get address of student
+        return address;
+    }
+
+    public void setAddress(String address) {
+        // set address of student
+        this.address = address;
+    }
+
+    public String getGender(){
+        // get sex of student
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        // set gender of student
+        this.gender = gender;
     }
 
     public Set<Enrollment> getEnrollments() {

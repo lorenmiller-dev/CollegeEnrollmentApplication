@@ -29,10 +29,10 @@ public class CourseService {
     }
 
     /**
-     * Retrieve a course by its ID.
+     * Retrieve a course by its Id.
      *
-     * @param id the ID of the course
-     * @return the course with the specified ID
+     * @param id the Id of the course
+     * @return the course with the specified Id
      * @throws ResponseStatusException if the course is not found
      */
     public Course getCourseById(Long id){
@@ -70,7 +70,7 @@ public class CourseService {
     /**
      * Update an existing course.
      *
-     * @param id the ID of the course to be updated
+     * @param id the Id of the course to be updated
      * @param updatedCourse the updated course object
      * @return the updated course
      * @throws ResponseStatusException if the course is not found
@@ -94,9 +94,9 @@ public class CourseService {
     }
 
     /**
-     * Delete a specified course given an ID.
+     * Delete a specified course given an Id.
      *
-     * @param id the ID of the course to be deleted
+     * @param id the Id of the course to be deleted
      * @throws ResponseStatusException if the course is not found or has existing enrollments
      */
     public void deleteCourse(Long id){

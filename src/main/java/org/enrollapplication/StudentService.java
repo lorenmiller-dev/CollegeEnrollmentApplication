@@ -112,12 +112,20 @@ public class StudentService {
         // Update student properties
         student.setName(updatedStudent.getName());
         student.setEmail(updatedStudent.getEmail());
+        student.setAge((updatedStudent.getAge()));
+        student.setAddress(updatedStudent.getAddress());
+        student.setGender(updatedStudent.getGender());
 
-        // Check if student with the same email already exits
-        if (studentRepository.findByEmail(student.getEmail()).isPresent()){
-            throw new ResponseStatusException(HttpStatus.CONFLICT, "A student with the same email already exists");
+        // check if current email is different from updated email
+       if(!student.getEmail().equals(updatedStudent.getEmail())) {
+           // Check if student with the same email already exits
+           if (studentRepository.findByEmail(student.getEmail()).isPresent()) {
+               throw new ResponseStatusException(HttpStatus.CONFLICT, "A student with the same email already exists");
 
-        }
+           }
+           // If the email is different, update the email
+            student.setEmail(updatedStudent.getEmail());
+       }
 
         // save updated student
         return studentRepository.save(student);
