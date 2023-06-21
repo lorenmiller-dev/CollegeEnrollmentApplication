@@ -5,6 +5,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.sql.Array;
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -24,11 +26,22 @@ public class StudentController {
     /**
      * Get all students
      *
-     * @return List of all students
+     * @return list of all students in StudentDTO format
      */
     @GetMapping
-    public List<Student> getAllStudents(){
-        return studentService.getAllStudents();
+    public List<StudentDTO> getAllStudents(){
+        List<Student> students = studentService.getAllStudents();
+        List<StudentDTO> studentDTOs = new ArrayList<>();
+
+        for (int i = 0; i < students.size(); i++){
+            Student student = students.get(i);
+            StudentDTO studentDTO = new StudentDTO();
+            studentDTO.setId(student.getId());
+            studentDTO.setName(student.getName());
+            studentDTOs.add(studentDTO);
+        }
+
+        return studentDTOs;
     }
 
     /**
@@ -76,6 +89,7 @@ public class StudentController {
      */
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteStudent(@PathVariable Long id){
+        studentService.deleteStudent(id);
         // return empty response body with HTTP status 204 (No content)
         return ResponseEntity.noContent().build();
     }

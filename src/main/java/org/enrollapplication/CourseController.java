@@ -4,6 +4,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -21,8 +22,20 @@ public class CourseController {
      * @return list of all courses
      */
     @GetMapping
-    public List<Course> getAllCourses(){
-        return courseService.getAllCourses();
+    public List<CourseDTO> getAllCourses(){
+        List<Course> courses = courseService.getAllCourses();
+        List<CourseDTO> courseDTOs = new ArrayList<>();
+
+        for (Course course : courses) {
+            CourseDTO courseDTO = new CourseDTO();
+            courseDTO.setId(course.getId());
+            courseDTO.setName(course.getName());
+            // Set other desired properties of the courseDTO
+
+            courseDTOs.add(courseDTO);
+        }
+
+        return courseDTOs;
     }
 
     /**

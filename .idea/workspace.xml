@@ -5,10 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dcc6ce01-5f8b-42a5-b629-d2a7e0757f21" name="Changes" comment="Initialize and Setup of dependencies and student and course classes">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/enrollapplication/CourseDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/enrollapplication/EnrollmentController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/enrollapplication/EnrollmentRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/enrollapplication/EnrollmentService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/enrollapplication/StudentDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/enrollapplication/CourseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/enrollapplication/CourseController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/enrollapplication/CourseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/enrollapplication/CourseService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/enrollapplication/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/enrollapplication/Student.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/enrollapplication/CourseRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/enrollapplication/CourseRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/enrollapplication/StudentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/enrollapplication/StudentController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/enrollapplication/StudentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/enrollapplication/StudentService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -20,6 +27,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="AnnotationType" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>

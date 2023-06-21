@@ -2,7 +2,6 @@ package org.enrollapplication;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
@@ -129,5 +128,20 @@ public class StudentService {
 
         // save updated student
         return studentRepository.save(student);
+    }
+
+    public void deleteStudent(Long id){
+        Student student = studentRepository.findById(id)
+                .orElseThrow(() ->
+                        new ResponseStatusException(HttpStatus.NOT_FOUND, "Course not found with id: " + id));
+
+
+        // Check if there are any enrollments associated with the student
+        if (!student.getEnrollments().isEmpty()) {
+            throw new ResponseStatusException(HttpStatus.CONFLICT, "Cannot delete a student with existing enrollments");
+        }
+
+        // delete the student
+        studentRepository.deleteById(id);
     }
 }
